@@ -57,6 +57,7 @@ async def mentionall(event):
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
+        chat_id = event.chat_id
         spam_chats.append(chat_id)
         
 @telethn.on(events.NewMessage(pattern="^/cancel$"))
