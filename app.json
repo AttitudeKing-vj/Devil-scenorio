@@ -74,7 +74,7 @@
          "value": "TeamScenario"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to @ScenarioSupport than consider you made an enemy.",
          "required": true,
          "value": "TeamScenario"
       },
@@ -102,7 +102,12 @@
         "required": false
       },
       "DEV_USERS": {
-         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
+         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother @ScenarioSupport then keep the current ID's here at they are and add yours.",
+         "required": true,
+         "value": ""
+      },
+      "REDIS_URL": {
+         "description": "Get from https://redis.io",
          "required": true,
          "value": ""
       },
