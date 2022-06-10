@@ -9,6 +9,7 @@ from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 from scenario import telethn
 
+spam_chats = []
 @telethn.on(events.NewMessage(pattern="^/tagall|/call|/tall|/all|/mentionall|#all|@all?(.*)"))
 async def mentionall(event):
   if event.is_private:
@@ -56,6 +57,7 @@ async def mentionall(event):
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
+        spam_chats.append(chat_id)
         
 @telethn.on(events.NewMessage(pattern="^/cancel$"))
 async def cancel_spam(event):
