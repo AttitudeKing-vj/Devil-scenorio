@@ -123,7 +123,7 @@ if ENV:
     UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", True)
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", True)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True) # Don't Change
-    BOT_NAME = os.environ.get("BOT_NAME", True) # Name Of your Bot.
+    BOT_NAME = os.environ.get("BOT_NAME", "Scenario") # Name Of your Bot.
     MONGO_DB = "scenario" # Don't change else errors.
     ARQ_API_URL = "https://arq.hamker.in"
     GOOGLE_CHROME_BIN = "/usr/bin/google-chrome"
