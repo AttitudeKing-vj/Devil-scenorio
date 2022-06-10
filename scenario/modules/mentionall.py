@@ -16,7 +16,7 @@ async def mentionall(event):
     return await event.respond("Use This In Channel or Group!")
 
   admins = []
-  async for admin in telethn.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+  async for admin in telethn.iter_participants(event.chat_id, filter=ChannelParticipantsAdmin):
     admins.append(admin.id)
   if event.sender_id not in admins:
     return await event.respond("Only admins can mention all!")
