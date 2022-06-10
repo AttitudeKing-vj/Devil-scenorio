@@ -2,9 +2,10 @@ import os
 import logging
 import asyncio
 
-from telethon import Button
-from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon import events, button
+from telethon.errors import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 from scenario import telethn
 
@@ -56,4 +57,21 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
         
+@telethn.on(events.NewMessage(pattern="^/cancel$"))
+async def cancel_spam(event):
+    if not event.chat_id in spam_chats:
+        return await event.respond("__There is no proccess on going...__")
+    is_admin = False
+    try:
+        partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
+    except UserNotParticipantError:
+        is_admin = False
+    else:
+        if isinstance(
+            partici_.participant, (ChannelParticipantAdmin, ChannelParticipantCreator)
+        ):
+            is_admin = True
+    if not is_admin:
+        return await event.respond("__Only admins can execute this command!__")
+
 __mod_name__ = "Mention All"
