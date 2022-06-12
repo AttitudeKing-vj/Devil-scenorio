@@ -1,8 +1,6 @@
 # A project By TeamScenario
 
 • A star 🌟 from you means a lot please star if you liked this project.
-<span style="color:blue">some Hello text</span>. 
-<br>
 
 # <mark>Things to be noted</mark>
 #### All images are clickable!!
